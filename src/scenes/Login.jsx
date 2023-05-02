@@ -23,8 +23,10 @@ export default function Login ({ setUser }) {
         alert(data.message)
         return
       }
-      setUser(data);
-      navigate("/");
+      setUser(data.user);
+      localStorage.setItem("token", data.token);
+      // setToken(data.token);
+      navigate("/addShow");
     })
     .catch(alert)
   }
